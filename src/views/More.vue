@@ -1,8 +1,5 @@
 <template>
-<<<<<<< HEAD
-  <div>
-    <h2>更多</h2>
-=======
+
   <div class="box">
     <van-nav-bar title="更多" :fixed="true" class="header" />
     <section>
@@ -63,25 +60,11 @@
       </ul>
     </section>
     <footer>脚部</footer>
->>>>>>> ecae9bf71ca3be0d3b63bad8f3bf608edccf60ec
   </div>
 </template>
 
 <script>
-<<<<<<< HEAD
-  export default {
-    name:"more",
-    data(){
-      return {
-        active:0
-      }
-    }
-  }
-</script>
 
-<style scoped>
-
-=======
 export default {
   name: "more",
   methods: {
@@ -109,6 +92,4 @@ section li {
   height: 7vh;
 }
 
-/* router-link .neirong{color:} */
->>>>>>> ecae9bf71ca3be0d3b63bad8f3bf608edccf60ec
 </style>
