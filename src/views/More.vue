@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="box">
     <van-nav-bar title="更多" :fixed="true" class="header" />
     <section>
       <van-image round width="5rem" height="5rem" src="https://img.yzcdn.cn/vant/cat.jpeg" />
@@ -74,19 +74,21 @@ export default {
 </script>
 
 <style scoped>
-
+.box{
+  height:100vh
+}
+section{
+  margin-top:46px;
+  text-align: center
+}
 section ul {
   margin-top: 5vh;
 }
 section li {
   color:black;
-  width: 100vw;
+
   height: 7vh;
 }
-footer {
-  /* background: #f00; */
-  margin-top: 28vh;
-  height: 50px;
-}
+
 /* router-link .neirong{color:} */
 </style>
