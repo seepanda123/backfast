@@ -10,12 +10,8 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "lib-flexible": "^0.3.2",
-    "px2rem-loader": "^0.1.9",
-=======
+
     "vant": "^2.1.3",
->>>>>>> ecae9bf71ca3be0d3b63bad8f3bf608edccf60ec
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },

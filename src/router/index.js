@@ -12,10 +12,6 @@ Vue.use(Router);
 export default new Router({
   routes: [
     {
-      path: "/",
-      redirect: "/index"
-    },
-    {
       path: "/index",
       name: "index",
       component: () => import("../views/Index"),
@@ -28,19 +24,13 @@ export default new Router({
         {
           path: "/more",
           name: "more",
-          component: () => import("../views/More")
+          component: () => import("../views/More"),
+
         },
         {
           path: "/shopbasket",
           name: "shopbasket",
-          component: () => import("../views/ShopBasket"),
-          children:[
-            {
-              path:"/notlogin",
-              name:"notlogin",
-              component:()=>import("../views/NotLogin.vue")
-            }
-          ]
+          component: () => import("../views/ShopBasket")
         },
         {
           path: "/menutypetbl",
@@ -48,6 +38,45 @@ export default new Router({
           component: () => import("../views/MenuTypeTbl")
         }
       ]
+    },
+    {
+      path:'/kitchenstory',
+      name:'kitchenstory',
+      component:()=>import("../views/KitchenStory.vue")
+    },
+    {
+      path:'/collecting',
+      name:'collecting',
+      component:()=>import("../views/Collecting.vue")
+    },
+    {
+      path:'/readhistory',
+      name:'readhistory',
+      component:()=>import("../views/ReadHistory.vue")
+    },
+    {path: '/Register',
+      name: 'Register',
+      component: ()=>import('../views/Register')
+    },
+    {
+      path: '/Login',
+      name: 'Login',
+      component: () => import('../views/Login')
+    },
+    {
+      path: '/Details',
+      name: 'Details',
+      component: () => import('../views/Details')
+    },
+    {
+      path: '/MaterialList',
+      name: 'MaterialList',
+      component: () => import('../views/MaterialList')
+    },
+    {
+      path: '/CookStep',
+      name: 'CookStep',
+      component: () => import('../views/CookStep')
     }
   ]
 });

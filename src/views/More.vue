@@ -59,7 +59,6 @@
         </li>
       </ul>
     </section>
-    <footer>脚部</footer>
   </div>
 </template>
 
