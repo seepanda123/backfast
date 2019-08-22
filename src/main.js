@@ -5,9 +5,16 @@ import App from './App'
 import router from './router'
 import Vant from 'vant';
 import 'vant/lib/index.css';
+import { Image } from 'vant';
+import { Icon } from 'vant';
+import { Row, Col } from 'vant';
+import { NavBar } from 'vant';
 
-Vue.use(Vant);
-
+Vue.use(NavBar);
+Vue.use(Row).use(Col);
+Vue.use(Icon);
+Vue.use(Image);
+Vue.use(Vant)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
