@@ -19,38 +19,12 @@
 
 <script>
 export default {
-  name:'MaterialList',
-  methods: {
-    goback(){
-      this.$router.go(-1)
-    }
-  },
+  name:'CookStep',
 }
 </script>
 
 <style>
-  .left{
-    height:100vh;
-    width:20vw;
-    border-right:1vw solid #eee;
-    float: left;
-  }
-  .right{
-    height:100vh;
-    width:70vw;
-    float: left;
-  }
-  .x{
-    font-size:3rem;
-    text-align: center;
-  }
-  .cai{
-    text-align: center;
-    font-size:1.5rem;
-  }
-  .right ul{
-    margin-top:3rem;
-    padding-left:1rem;
-  }
+  
+  
   
 </style>
