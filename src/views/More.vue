@@ -1,10 +1,10 @@
 <template>
-  <div class="box">
+  <div>
     <van-nav-bar title="更多" :fixed="true" class="header" />
     <section>
       <van-image round width="5rem" height="5rem" src="https://img.yzcdn.cn/vant/cat.jpeg" />
       <p>厨友1566214099</p>
-      <p>你收藏的菜谱已经同步到云端永不丢失</p>
+      <p>你收藏的菜谱已经同步到云<br>端,永不丢失</p>
       <ul>
         <li>
           <router-link  to="/kitchenstory" tag="li">
@@ -74,9 +74,7 @@ export default {
 </script>
 
 <style scoped>
-.box{
-  height:100vh
-}
+
 section{
   margin-top:46px;
   text-align: center
@@ -89,6 +87,4 @@ section li {
 
   height: 7vh;
 }
-
-/* router-link .neirong{color:} */
 </style>
