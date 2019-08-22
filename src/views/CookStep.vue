@@ -52,11 +52,5 @@ export default {
     margin-top:3rem;
     padding-left:1rem;
   }
-  .right li{
-    line-height:2.5rem;
-  }
-  .right span{
-    color:orangered;
-    margin-left:.5rem
-  }
+  
 </style>
