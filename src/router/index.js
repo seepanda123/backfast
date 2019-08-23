@@ -6,10 +6,13 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    }
+   { path:'/index',
+    name:'index',
+    component:()=>import('../views/index')
+  },
+  { path:'/Fresh',
+    name:'Fresh',
+    component:()=>import('../views/Fresh')
+  },
   ]
 })
