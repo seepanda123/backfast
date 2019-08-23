@@ -2,8 +2,8 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import 'lib-flexible/flexible'
 
-Vue.use(Vant);
-Vue.config.productionTip = false;
+
+
 import Vue from 'vue'
 import App from './App'
 import router from './router'
@@ -13,7 +13,10 @@ import { Image } from 'vant';
 import { Icon } from 'vant';
 import { Row, Col } from 'vant';
 import { NavBar } from 'vant';
+import { Toast } from 'vant';
 
+
+Vue.use(Toast);
 Vue.use(NavBar);
 Vue.use(Row).use(Col);
 Vue.use(Icon);

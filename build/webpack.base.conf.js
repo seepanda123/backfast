@@ -1,4 +1,6 @@
 'use strict'
+//引入jquery
+const webpack = require('webpack')
 const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
@@ -78,5 +80,14 @@ module.exports = {
     net: 'empty',
     tls: 'empty',
     child_process: 'empty'
-  }
+  },
+  //jquery
+  plugins: [
+    new webpack.ProgressPlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      jquery: "jquery",
+      "window.jQuery":"jquery"
+    })
+  ]
 }

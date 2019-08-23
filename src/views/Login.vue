@@ -30,7 +30,9 @@
 
 
     <br>
-    <van-button type="primary" size="large" color="#ffee00">登录</van-button>
+    <van-button v-if="username&&password" type="primary" size="large" @click="login()">登录</van-button>
+    <van-button v-else type="primary" size="large" color="#ccc" disabled>登录</van-button>
+    
 
 
   </div>
@@ -38,17 +40,33 @@
 
 
 <script>
+import api from '../api/api_pro'
+
 export default {
   name:'Login',
   data(){
     return{
       username:'',
-      password:''
+      password:'',
+      tishi:''
     } 
   },
   methods: {
     onClickLeft(){
       this.$router.go(-2);
+    },
+    login(){
+      let params = {
+        username:this.username,
+        password:this.password
+      };
+      api.login(params).then((data)=>{
+        if(data.code === 1){
+          this.$router.push('index')
+        }else{
+          this.$toast(data.msg);
+        }
+      })
     }
   },
 }
