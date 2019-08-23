@@ -24,8 +24,7 @@ export default new Router({
         {
           path: "/more",
           name: "more",
-          component: () => import("../views/More"),
-
+          component: () => import("../views/More")
         },
         {
           path: "/shopbasket",
@@ -40,43 +39,49 @@ export default new Router({
       ]
     },
     {
-      path:'/kitchenstory',
-      name:'kitchenstory',
-      component:()=>import("../views/KitchenStory.vue")
+      path: "/kitchenstory",
+      name: "kitchenstory",
+      component: () => import("../views/KitchenStory.vue")
     },
     {
-      path:'/collecting',
-      name:'collecting',
-      component:()=>import("../views/Collecting.vue")
+      path: "/collecting",
+      name: "collecting",
+      component: () => import("../views/Collecting.vue")
     },
     {
-      path:'/readhistory',
-      name:'readhistory',
-      component:()=>import("../views/ReadHistory.vue")
-    },
-    {path: '/Register',
-      name: 'Register',
-      component: ()=>import('../views/Register')
+      path: "/readhistory",
+      name: "readhistory",
+      component: () => import("../views/ReadHistory.vue")
     },
     {
-      path: '/Login',
-      name: 'Login',
-      component: () => import('../views/Login')
+      path: "/Register",
+      name: "Register",
+      component: () => import("../views/Register")
     },
     {
-      path: '/Details',
-      name: 'Details',
-      component: () => import('../views/Details')
+      path: "/Login",
+      name: "Login",
+      component: () => import("../views/Login")
     },
     {
-      path: '/MaterialList',
-      name: 'MaterialList',
-      component: () => import('../views/MaterialList')
+      path: "/Details",
+      name: "Details",
+      component: () => import("../views/Details")
     },
     {
-      path: '/CookStep',
-      name: 'CookStep',
-      component: () => import('../views/CookStep')
+      path: "/MaterialList",
+      name: "MaterialList",
+      component: () => import("../views/MaterialList")
+    },
+    {
+      path: "/CookStep",
+      name: "CookStep",
+      component: () => import("../views/CookStep")
+    },
+    {
+      path:"/menudetails",
+      name:"menudetails",
+      component:()=>import("../views/MenuDetails")
     }
   ]
 });

@@ -6,47 +6,47 @@
     <div class="section">
       <p>热门分类</p>
       <van-grid :gutter="10">
-        <van-grid-item v-for="value in 4" :key="value" icon="photo-o" text="文字" />
+        <van-grid-item v-for="value in 4" :key="value" icon="photo-o" text="文字" to="/MenuDetails"/>
       </van-grid>
       <p>一日三餐</p>
       <van-grid :gutter="10">
-        <van-grid-item v-for="value in 4" :key="value" icon="photo-o" text="文字" />
+        <van-grid-item v-for="value in 4" :key="value" icon="photo-o" text="文字" to="/MenuDetails" />
       </van-grid>
       <p>家常菜谱</p>
       <van-grid :gutter="10">
-        <van-grid-item v-for="value in 9" :key="value" icon="photo-o" text="文字" />
+        <van-grid-item v-for="value in 9" :key="value" icon="photo-o" text="文字" to="/MenuDetails"/>
       </van-grid>
       <p>主食小吃</p>
       <van-grid :gutter="10">
-        <van-grid-item v-for="value in 5" :key="value" icon="photo-o" text="文字" />
+        <van-grid-item v-for="value in 5" :key="value" icon="photo-o" text="文字" to="/MenuDetails"/>
       </van-grid>
       <p>时令美食</p>
       <van-grid :gutter="10">
-        <van-grid-item v-for="value in 4" :key="value" icon="photo-o" text="文字" />
+        <van-grid-item v-for="value in 4" :key="value" icon="photo-o" text="文字" to="/MenuDetails"/>
       </van-grid>
       <p>食材</p>
       <van-grid :gutter="10">
-        <van-grid-item v-for="value in 7" :key="value" icon="photo-o" text="文字" />
+        <van-grid-item v-for="value in 7" :key="value" icon="photo-o" text="文字" to="/MenuDetails"/>
       </van-grid>
       <p>孕婴食谱</p>
       <van-grid :gutter="10">
-        <van-grid-item v-for="value in 6" :key="value" icon="photo-o" text="文字" />
+        <van-grid-item v-for="value in 6" :key="value" icon="photo-o" text="文字" to="/MenuDetails"/>
       </van-grid>
       <p>烘焙甜品</p>
       <van-grid :gutter="10">
-        <van-grid-item v-for="value in 9" :key="value" icon="photo-o" text="文字" />
+        <van-grid-item v-for="value in 9" :key="value" icon="photo-o" text="文字" to="/MenuDetails"/>
       </van-grid>
       <p>美容养生</p>
       <van-grid :gutter="10">
-        <van-grid-item v-for="value in 9" :key="value" icon="photo-o" text="文字" />
+        <van-grid-item v-for="value in 9" :key="value" icon="photo-o" text="文字" to="/MenuDetails"/>
       </van-grid>
       <p>场景</p>
       <van-grid :gutter="10">
-        <van-grid-item v-for="value in 7" :key="value" icon="photo-o" text="文字" />
+        <van-grid-item v-for="value in 7" :key="value" icon="photo-o" text="文字" to="/MenuDetails"/>
       </van-grid>
       <p>奇趣发现</p>
       <van-grid :gutter="10">
-        <van-grid-item v-for="value in 7" :key="value" icon="photo-o" text="文字" />
+        <van-grid-item v-for="value in 7" :key="value" icon="photo-o" text="文字" to="/MenuDetails"/>
       </van-grid>
     </div>
 

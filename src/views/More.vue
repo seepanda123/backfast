@@ -1,9 +1,9 @@
 <template>
 
   <div class="box">
-    <van-nav-bar title="更多" :fixed="true" class="header" />
+    <van-nav-bar title="更多"  class="header" />
     <section>
-      <van-image round width="5rem" height="5rem" src="https://img.yzcdn.cn/vant/cat.jpeg" />
+      <van-image round width="3rem" height="3rem" src="https://img.yzcdn.cn/vant/cat.jpeg" />
       <p>厨友1566214099</p>
       <p>你收藏的菜谱已经同步到云端永不丢失</p>
       <ul>
@@ -79,7 +79,7 @@ export default {
   height:100vh
 }
 section{
-  margin-top:46px;
+  margin-top:10px;
   text-align: center
 }
 section ul {

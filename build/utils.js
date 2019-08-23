@@ -15,7 +15,7 @@ exports.assetsPath = function (_path) {
 exports.cssLoaders = function (options) {
   options = options || {}
 
-  /* const cssLoader = {
+ /*  const cssLoader = {
     loader: 'css-loader',
     options: {
       sourceMap: options.sourceMap
@@ -39,7 +39,7 @@ exports.cssLoaders = function (options) {
   const px2remLoader = {
     loader: 'px2rem-loader',
     options: {
-      remUnit: 64  //根据psd的尺寸  ／10 得来
+      remUnit: 37.5  //根据psd的尺寸  ／10 得来
     }
   }
 

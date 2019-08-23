@@ -7,7 +7,12 @@
       <!-- <van-nav-bar title="菜篮子" right-text="清空" @click-right="tap()" :fixed="true"/> -->
       <van-tabs @click="onClick" title-active-color="#FF0" sticky scrollTop="46px">
         <van-tab title="按菜品查看">
-          <div>
+          <div class="nologin">
+            <h2>经常买完菜回家，才发现忘了买葱？</h2>
+            <p>(把菜谱中的原料放进菜篮子，买菜时就不会漏掉原料了)</p>
+            <van-button type="warning" class="btn" to="Index">立即启用</van-button>
+          </div>
+         <!--  <div>
             <h3>
               <van-image
                 width="50"
@@ -121,7 +126,7 @@
                 </van-row>
               </li>
             </ul>
-          </div>
+          </div> -->
         </van-tab>
 
         <van-tab title="按材料查看">
@@ -208,21 +213,20 @@ export default {
 
 <style scoped>
 h3 {
-  height: 100px;
+  height: 50px;
   margin-left:5vw;
 }
 h3 span {
-  margin-left: 150px;
+  margin-left: 100px;
 }
 .Image {
   float: left;
-  padding: 5px;
 }
 section li {
-  height: 100px;
+  height: 50px;
   background: #f5f1f1;
   margin: 10px 25px;
-  line-height: 100px;
+  line-height: 50px;
 }
 
 Body {
@@ -233,11 +237,25 @@ Body {
 section {
   flex: 1;
   overflow:auto;
-  margin: 46px 0;
+  margin: 50px 0;
 }
 h4{
-  height: 40px;
-  line-height: 40px;
+  height: 30px;
+  line-height: 30px;
   margin-left:30px;
+  font-size: 16px;
+}
+.nologin{
+  width: 300px;
+  height:200px;
+  margin: 150px auto;
+
+}
+.nologin p{
+  font-size: 16px;
+  color: #afa9a9;
+}
+.btn{
+  margin-left:100px;
 }
 </style>
