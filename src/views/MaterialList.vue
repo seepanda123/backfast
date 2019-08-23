@@ -3,8 +3,9 @@
     <div class="left">
       <div class="x" @click="goback()">X</div>
       <div class="cai">
-        <p>材</p>
-        <p>料</p>
+        <br>
+        <div>材</div>
+        <div>料</div>
       </div>
     </div>
     <div class="right">
@@ -41,19 +42,20 @@ export default {
     float: left;
   }
   .x{
-    font-size:3rem;
+    font-size:1rem;
     text-align: center;
   }
   .cai{
     text-align: center;
-    font-size:1.5rem;
+    font-size:20px;
   }
   .right ul{
-    margin-top:3rem;
+    margin-top:1rem;
     padding-left:1rem;
   }
   .right li{
-    line-height:2.5rem;
+    line-height:1rem;
+    font-size:14px
   }
   .right span{
     color:orangered;

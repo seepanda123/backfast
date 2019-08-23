@@ -15,6 +15,7 @@
         clearable
         label="用户名"
         placeholder="请输入用户名"
+        :error-message="tishi"
       />
       
 
@@ -28,7 +29,7 @@
     </van-cell-group>
     <br>
 
-    <van-button v-if="username&&password" type="primary" size="large">立即注册</van-button>
+    <van-button v-if="username&&password" type="primary" size="large" @click="register()">立即注册</van-button>
     <van-button v-else type="primary" size="large" color="#ccc" disabled>立即注册</van-button>
 
     <br>
@@ -38,17 +39,33 @@
 
 
 <script>
+import api from '../api/api_pro'
 export default {
   name:'Register',
   data(){
     return{
       username:'',
-      password:''
+      password:'',
+      tishi:''
     } 
   },
   methods: {
     onClickLeft(){
       this.$router.go(-1);
+    },
+    register(){
+      let params = {
+        username:this.username,
+        password:this.password
+      }
+      api.register(params).then((data)=>{
+        if(data.code === 1){
+          this.tishi = ''
+          this.$router.push('index')
+        }else{
+          this.tishi = data.msg
+        }
+      })
     }
   },
 }
