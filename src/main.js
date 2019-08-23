@@ -1,10 +1,15 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+import 'lib-flexible/flexible'
+
+
+
 import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Vant from 'vant';
 import 'vant/lib/index.css';
+<<<<<<< HEAD
 import { Tabbar, TabbarItem } from 'vant';
 import { Lazyload } from 'vant';
 
@@ -14,13 +19,27 @@ Vue.use(Lazyload);
 Vue.use(Tabbar).use(TabbarItem);
 
 Vue.use(Vant);
+=======
+import { Image } from 'vant';
+import { Icon } from 'vant';
+import { Row, Col } from 'vant';
+import { NavBar } from 'vant';
+import { Toast } from 'vant';
 
+>>>>>>> cf3c99d6d84b2a01add6f20d2b8b8f51ada3e581
+
+Vue.use(Toast);
+Vue.use(NavBar);
+Vue.use(Row).use(Col);
+Vue.use(Icon);
+Vue.use(Image);
+Vue.use(Vant)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
+  el: "#app",
   router,
   components: { App },
-  template: '<App/>'
-})
+  template: "<App/>"
+});
