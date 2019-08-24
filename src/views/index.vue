@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <van-nav-bar title="早餐菜谱" :fixed="true" />
+  <div class="box">
+    <van-nav-bar title="早餐菜谱" />
 
     <div class="top">
       <van-grid :column-num="2">
@@ -19,12 +19,7 @@
 
 
     </div>
-    <van-tabbar v-model="active">
-        <van-tabbar-item icon="home-o">标签</van-tabbar-item>
-        <van-tabbar-item icon="search">标签</van-tabbar-item>
-        <van-tabbar-item icon="friends-o">标签</van-tabbar-item>
-        <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
-      </van-tabbar>
+    
   </div>
 </template>
 <script>
@@ -45,13 +40,18 @@ export default {
 };
 </script>
 <style scoped>
+.box{
+  display: flex;
+  flex-direction: column;
+  height:100vh
+}
 .imgindex {
   width: 100%;
   height: 200px;
 }
 .top{
-  margin-top:40px;
-  margin-right: 20px;
-  margin-left: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  overflow: auto;
 }
 </style>
