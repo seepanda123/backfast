@@ -82,6 +82,12 @@ export default new Router({
       path:"/menudetails",
       name:"menudetails",
       component:()=>import("../views/MenuDetails")
-    }
+    },
+    {
+      path: '/Fresh',
+      name: 'Fresh',
+      component: () => import('../views/Fresh')
+    },
+  
   ]
 });

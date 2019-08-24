@@ -14,8 +14,12 @@ import { Icon } from 'vant';
 import { Row, Col } from 'vant';
 import { NavBar } from 'vant';
 import { Toast } from 'vant';
+import { Tabbar, TabbarItem } from 'vant';
+import { Lazyload } from 'vant';
 
-
+// options 为可选参数，无则不传
+Vue.use(Lazyload);
+Vue.use(Tabbar).use(TabbarItem);
 Vue.use(Toast);
 Vue.use(NavBar);
 Vue.use(Row).use(Col);
