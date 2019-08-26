@@ -9,25 +9,17 @@ import App from './App'
 import router from './router'
 import Vant from 'vant';
 import 'vant/lib/index.css';
-<<<<<<< HEAD
-import { Tabbar, TabbarItem } from 'vant';
-import { Lazyload } from 'vant';
-
-// options 为可选参数，无则不传
-Vue.use(Lazyload);
-
-Vue.use(Tabbar).use(TabbarItem);
-
-Vue.use(Vant);
-=======
 import { Image } from 'vant';
 import { Icon } from 'vant';
 import { Row, Col } from 'vant';
 import { NavBar } from 'vant';
 import { Toast } from 'vant';
+import { Tabbar, TabbarItem } from 'vant';
+import { Lazyload } from 'vant';
 
->>>>>>> cf3c99d6d84b2a01add6f20d2b8b8f51ada3e581
-
+// options 为可选参数，无则不传
+Vue.use(Lazyload);
+Vue.use(Tabbar).use(TabbarItem);
 Vue.use(Toast);
 Vue.use(NavBar);
 Vue.use(Row).use(Col);

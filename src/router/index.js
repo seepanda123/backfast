@@ -11,16 +11,6 @@ Vue.use(Router);
 
 export default new Router({
   routes: [
-<<<<<<< HEAD
-   { path:'/index',
-    name:'index',
-    component:()=>import('../views/index')
-  },
-  { path:'/Fresh',
-    name:'Fresh',
-    component:()=>import('../views/Fresh')
-  },
-=======
     {
       path: "/index",
       name: "index",
@@ -92,7 +82,10 @@ export default new Router({
       path:"/menudetails",
       name:"menudetails",
       component:()=>import("../views/MenuDetails")
-    }
->>>>>>> cf3c99d6d84b2a01add6f20d2b8b8f51ada3e581
+    },
+    { path:'/Fresh',
+      name:'Fresh',
+      component:()=>import('../views/Fresh')
+    },
   ]
 });
