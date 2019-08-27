@@ -1,29 +1,48 @@
 <template>
   <div>
-    <van-nav-bar title="新鲜菜" :fixed="true"/>
-    <div>
-      <img v-for="img in imageList" v-lazy="img" class="imgFresh" >
+    <van-nav-bar title="新鲜菜" left-arrow @click-left="onClickLeft" />
+    <div class="Fresh">
+      <div class="Freshimg">
+        <img src="../img/1.jpg" alt />
+      </div>
+      <div class="Fresh1">
+        <h3>秋葵虾仁菌菇汤</h3>
+        <p>今天分享一道无敌好喝的秋葵虾仁菌菇汤，鲜香浓郁，汤汁浓稠，营养满满，一大碗不够我一个人喝。</p>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      imageList: [
-        'https://img.yzcdn.cn/vant/apple-1.jpg',
-        'https://img.yzcdn.cn/vant/apple-2.jpg'
-      ]
-    };
+  methods: {
+    onClickLeft() {
+      this.$router.go(-1);
+    }
   }
-}
+};
 </script>
 
 <style scoped>
-.imgFresh{
-  width: 100%;
-  height: 200px;
+.Fresh {
+  width: 100vw;
+  height: 400px;
 }
-
+.Freshimg img {
+  width: 92vw;
+  height: 200px;
+  margin: 0 4vw;
+}
+.Fresh1 {
+  width: 92vw;
+  height: 60px;
+  margin: 0 4vw;
+  font-size: 17px;
+}
+.Fresh1 h3 {
+  margin: 10px 0;
+}
+.Fresh1 p{
+  margin: 0;
+}
 </style>

@@ -17,14 +17,13 @@
 
       <img v-for="img in imageList" v-lazy="img" class="imgindex" />
 
-
     </div>
 
   </div>
 </template>
 <script>
 export default {
-  name: "index",
+  name:"index",
   data() {
     return {
       value: "",
@@ -35,22 +34,77 @@ export default {
         "https://img.yzcdn.cn/vant/apple-2.jpg"
       ]
     };
+  },
+  methods: {
+    week() {
+      this.$router.push("WeekHot");
+    },
+    fresh() {
+      this.$router.push("Fresh");
+    },
+    gmyj() {
+      this.$router.push("Gmyj");
+    },
+    menu() {
+      this.$router.push("MenuTypeTbl");
+    },
+    classlist() {
+      this.$router.push("ClassList");
+    },
+    search() {
+      this.$router.push("Search");
+    }
   }
-};
+}
 </script>
 <style scoped>
-.box{
-  display: flex;
-  flex-direction: column;
-  height:100vh
-}
-.imgindex {
+.imgindex{
   width: 100%;
   height: 200px;
 }
-.top{
-  padding-right: 20px;
-  padding-left: 20px;
-  overflow: auto;
+.top {
+  margin-top: 40px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+.indexul div {
+  font-size: 16px;
+  width: 100%;
+  height: 40px;
+}
+.indexul li {
+  float: left;
+}
+.indexul1 li {
+  width: 24%;
+  height: 40px;
+  border: 1px solid black;
+  text-align: center;
+  line-height: 40px;
+}
+.indexul1 li:first-child {
+  border-left: none;
+}
+.indexul1 li:last-child {
+  border-right: none;
+}
+.indexul2 li {
+  width: 24%;
+  height: 40px;
+  border: 1px solid black;
+  border-top: none;
+  border-bottom: none;
+  text-align: center;
+  line-height: 40px;
+}
+.indexul2 li:first-child {
+  border-left: none;
+}
+.indexul2 li:last-child {
+  border-right: none;
+}
+.indexbottom img{
+  width: 100%;
+  height: 200px;
 }
 </style>

@@ -16,12 +16,12 @@
 export default {
   name: "index",
   data(){
-    return {
+    return{
       active:0
     }
   }
 };
 </script>
-<style scoped>
+<style scoped="">
 
 </style>
