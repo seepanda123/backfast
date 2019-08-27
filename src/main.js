@@ -15,10 +15,13 @@ import { Row, Col } from 'vant';
 import { NavBar } from 'vant';
 import { Toast } from 'vant';
 import { Tabbar, TabbarItem } from 'vant';
-import { Lazyload } from 'vant';
+import { Search } from 'vant';
+import { Card } from 'vant';
 
 // options 为可选参数，无则不传
-Vue.use(Lazyload);
+
+Vue.use(Card);
+Vue.use(Search);
 Vue.use(Tabbar).use(TabbarItem);
 Vue.use(Toast);
 Vue.use(NavBar);

@@ -10,13 +10,11 @@ Router.prototype.push = function push(location) {
 Vue.use(Router);
 
 export default new Router({
-  routes: [
-    {
+  routes: [{
       path: "/index",
       name: "index",
       component: () => import("../views/Index"),
-      children: [
-        {
+      children: [{
           path: "/home",
           name: "home",
           component: () => import("../views/Home")
@@ -79,13 +77,44 @@ export default new Router({
       component: () => import("../views/CookStep")
     },
     {
-      path:"/menudetails",
-      name:"menudetails",
-      component:()=>import("../views/MenuDetails")
+      path: "/menudetails",
+      name: "menudetails",
+      component: () => import("../views/MenuDetails")
     },
-    { path:'/Fresh',
-      name:'Fresh',
-      component:()=>import('../views/Fresh')
+    {
+      path: '/Fresh',
+      name: 'Fresh',
+      component: () => import('../views/Fresh')
     },
+    {
+      path: '/Fresh',
+      name: 'Fresh',
+      component: () => import('../views/Fresh')
+    },
+    {
+      path: '/WeekHot',
+      name: 'WeekHot',
+      component: () => import('../views/WeekHot')
+    },
+    {
+      path: '/Search',
+      name: 'Search',
+      component: () => import('../views/Search')
+    },
+    {
+      path: '/SearchList',
+      name: 'SearchList',
+      component: () => import('../views/SearchList')
+    },
+    {
+      path: '/ClassList',
+      name: 'ClassList',
+      component: () => import('../views/ClassList')
+    },
+    {
+      path: '/Gmyj',
+      name: 'Gmyj',
+      component: () => import('../views/Gmyj')
+    }
   ]
 });
