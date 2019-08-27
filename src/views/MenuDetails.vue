@@ -34,7 +34,12 @@
 </template>
 
 <script>
-import axios from 'axios'
+import app from '../api/api_pro'
+let parmas = {uid:6000001}
+app.product(parmas).then((data)=>{
+  console.log(data)
+})
+
 export default {
   name: "menudetails",
   data(){

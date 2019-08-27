@@ -12,30 +12,35 @@ Vue.use(Router);
 export default new Router({
   routes: [
     {
-      path: "/index",
-      name: "index",
-      component: () => import("../views/Index"),
+      path: "/",
+      redirect: "/index"
+    },
+    {
+      path: "/all",
+      name: "all",
+      component: () => import("../views/All"),
       children: [
         {
+          path: "/index",
+          name: "index",
+          component: () => import("../views/Index"),
+        }, {
           path: "/home",
           name: "home",
           component: () => import("../views/Home")
-        },
-        {
+        }, {
           path: "/more",
           name: "more",
           component: () => import("../views/More")
-        },
-        {
+        }, {
           path: "/shopbasket",
           name: "shopbasket",
           component: () => import("../views/ShopBasket")
-        },
-        {
+        }, {
           path: "/menutypetbl",
           name: "menutypetbl",
           component: () => import("../views/MenuTypeTbl")
-        }
+        },
       ]
     },
     {
@@ -79,13 +84,44 @@ export default new Router({
       component: () => import("../views/CookStep")
     },
     {
-      path:"/menudetails",
-      name:"menudetails",
-      component:()=>import("../views/MenuDetails")
+      path: "/menudetails",
+      name: "menudetails",
+      component: () => import("../views/MenuDetails")
     },
-    { path:'/Fresh',
-      name:'Fresh',
-      component:()=>import('../views/Fresh')
+    {
+      path: '/Fresh',
+      name: 'Fresh',
+      component: () => import('../views/Fresh')
     },
+    {
+      path: '/Fresh',
+      name: 'Fresh',
+      component: () => import('../views/Fresh')
+    },
+    {
+      path: '/WeekHot',
+      name: 'WeekHot',
+      component: () => import('../views/WeekHot')
+    },
+    {
+      path: '/Search',
+      name: 'Search',
+      component: () => import('../views/Search')
+    },
+    {
+      path: '/SearchList',
+      name: 'SearchList',
+      component: () => import('../views/SearchList')
+    },
+    {
+      path: '/ClassList',
+      name: 'ClassList',
+      component: () => import('../views/ClassList')
+    },
+    {
+      path: '/Gmyj',
+      name: 'Gmyj',
+      component: () => import('../views/Gmyj')
+    }
   ]
-});
+})

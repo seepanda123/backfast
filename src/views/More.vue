@@ -4,15 +4,22 @@
   <div class="box">
     <van-nav-bar title="更多"  class="header" />
     <section>
-      <div class="logined" style="display:none">
+      <div v-if="token">
         <van-image round width="3rem" height="3rem" src="https://img.yzcdn.cn/vant/cat.jpeg" />
         <p>厨友1566214099</p>
-        <p>你收藏的菜谱已经同步到云<br>端,永不丢失</p>
+        <p>你收藏的菜谱已经同步到云端永不丢失</p>
       </div>
-      <div class="unlogin" style="display:block">
-        <van-image round width="3rem" height="3rem" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1666256797,972082711&fm=26&gp=0.jpg" />
-        <h4>登录/注册账号</h4>
-        <p>解锁收藏，云端同步功能、收<br>藏内容不丢失</p>
+      <div v-else>
+        <div class="logined" style="display:none">
+          <van-image round width="3rem" height="3rem" src="https://img.yzcdn.cn/vant/cat.jpeg" />
+          <p>厨友1566214099</p>
+          <p>你收藏的菜谱已经同步到云<br>端,永不丢失</p>
+        </div>
+        <div class="unlogin" style="display:block">
+          <van-image round width="3rem" height="3rem" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1666256797,972082711&fm=26&gp=0.jpg" />
+          <h4>登录/注册账号</h4>
+          <p>解锁收藏，云端同步功能、收<br>藏内容不丢失</p>
+        </div>
       </div>
       <ul>
         <li>
@@ -74,10 +81,18 @@
 
 export default {
   name: "more",
+  data(){
+    return{
+      token:''
+    }
+  },
   methods: {
     readhistory(){
       this.$router.push('/ReadHistory.vue')
     }
+  },
+  mounted() {
+    this.token = localStorage.getItem("token")
   },
 };
 </script>
