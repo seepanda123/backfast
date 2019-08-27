@@ -28,7 +28,6 @@ export default {
   data() {
     return {
       value: "",
-      active: 0,
       imageList: [
         "https://img.yzcdn.cn/vant/apple-1.jpg",
         "https://img.yzcdn.cn/vant/apple-2.jpg",
@@ -54,4 +53,5 @@ export default {
   padding-left: 20px;
   overflow: auto;
 }
+
 </style>

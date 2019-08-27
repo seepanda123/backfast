@@ -194,7 +194,6 @@ export default {
   name: "shopbasket",
   data() {
     return {
-      active: 0
     };
   },
   methods: {
