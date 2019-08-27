@@ -8,7 +8,7 @@
 
       <van-image
         width="100vw"
-        height="10rem"
+        height="150px"
         fit="cover"
         src="https://img.yzcdn.cn/vant/cat.jpeg"
       />
@@ -36,15 +36,13 @@
 
       <p class="title">—— <span>烹饪步骤</span> ——</p>
 
-      <div class="mintit">点击步骤进入烹饪模式</div>
-
-
-      <dl>
+      <div class="mintit" @click="gocook">点击步骤进入烹饪模式
+        <dl>
         <dt>1</dt>
         <dd>
           <van-image
             width="80vw"
-            height="10rem"
+            height="150px"
             fit="cover"
             src="https://img.yzcdn.cn/vant/cat.jpeg"
           />
@@ -56,13 +54,17 @@
         <dd>
           <van-image
             width="80vw"
-            height="10rem"
+            height="150px"
             fit="cover"
             src="https://img.yzcdn.cn/vant/cat.jpeg"
           />
           <p class="mintit1">就俩二胡阿喝过框架的功课是哦帅得很吧价格为霍芳芳;</p>
         </dd>
       </dl>
+      </div>
+
+
+      
 
       <p class="title">—— <span>小贴士</span> ——</p>
 
@@ -90,6 +92,9 @@ export default {
     },
     mat(){
       this.$router.push("MaterialList")
+    },
+    gocook(){
+      this.$router.push('CookStep')
     }
   },
 }
@@ -106,25 +111,26 @@ export default {
     height:100vh;
   }
   .title{
-    text-align: center
+    text-align: center;
+    font-size:16px
   }
   .detail{
     padding: 0 1rem;
   }
   .detail{
-    line-height:2rem;
-    font-size:.8rem;
+    line-height:1rem;
+    font-size:14px;
   }
   .con{
-    margin-right:3rem;
+    margin-right:1rem;
   }
   .mintit{
-    font-size:.8rem;
+    font-size:14px;
     color: #333;
     text-align: center
   }
   .mintit1{
-    font-size:.9rem;
+    font-size:14px;
     color: #333;
     margin-right:2rem;
   }
@@ -132,10 +138,15 @@ export default {
     display: flex
   }
   dt{
-    font-size:1.3rem;
+    font-size:20px;
+    text-align: center;
+    width:50px
+  }
+  dd{
+    margin-left:10px
   }
   .van-nav-bar__left .van-nav-bar__text{
-    font-size:1.3rem;
+    font-size:25px;
     color: black
   }
   .van-nav-bar__right .van-nav-bar__text{
