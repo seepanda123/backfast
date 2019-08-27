@@ -6,10 +6,18 @@ import router from './router'
 import Vant from 'vant';
 import 'vant/lib/index.css';
 import { Tabbar, TabbarItem } from 'vant';
-import { Lazyload } from 'vant';
+import { NavBar } from 'vant';
+import { Search } from 'vant';
+import { Icon } from 'vant';
+import { Card } from 'vant';
 
-// options 为可选参数，无则不传
-Vue.use(Lazyload);
+Vue.use(Card);
+
+Vue.use(Icon);
+
+Vue.use(Search);
+
+Vue.use(NavBar);
 
 Vue.use(Tabbar).use(TabbarItem);
 

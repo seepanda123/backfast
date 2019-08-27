@@ -14,5 +14,25 @@ export default new Router({
     name:'Fresh',
     component:()=>import('../views/Fresh')
   },
+  { path:'/WeekHot',
+    name:'WeekHot',
+    component:()=>import('../views/WeekHot')
+  },
+  { path:'/Search',
+    name:'Search',
+    component:()=>import('../views/Search')
+  },
+  { path:'/SearchList',
+    name:'SearchList',
+    component:()=>import('../views/SearchList')
+  },
+  { path:'/ClassList',
+    name:'ClassList',
+    component:()=>import('../views/ClassList')
+  },
+  { path:'/Gmyj',
+    name:'Gmyj',
+    component:()=>import('../views/Gmyj')
+  }
   ]
 })
