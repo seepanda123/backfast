@@ -61,6 +61,7 @@ export default {
       api.register(params).then((data)=>{
         if(data.code === 1){
           this.tishi = ''
+          localStorage.setItem("token","大帅比")
           this.$router.push('index')
         }else{
           this.tishi = data.msg

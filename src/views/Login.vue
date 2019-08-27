@@ -62,6 +62,7 @@ export default {
       };
       api.login(params).then((data)=>{
         if(data.code === 1){
+          localStorage.setItem("token","大帅比")
           this.$router.push('index')
         }else{
           this.$toast(data.msg);

@@ -1,63 +1,39 @@
 <template>
-  <div>
+  <div class="box">
+    <van-nav-bar title="早餐菜谱" />
+
     <div class="top">
-      <div class="imgindex">
-        <img src="../img/4.jpg" @click="week()" />
-        <img src="../img/5.jpg" @click="fresh()" />
-      </div>
+      <van-grid :column-num="2">
+        <van-grid-item v-for="value in 2" :key="value" icon="photo-o" />
+      </van-grid>
 
-      <van-search placeholder="搜索 菜谱/食材" v-model="value" input-align="center" @click="search()"/>
+      <van-search placeholder="搜索 菜谱/食材" v-model="value" input-align="center" />
 
-      <div class="indexul">
-        <div>
-          <ul class="indexul1">
-            <li @click="classlist()">早餐</li>
-            <li @click="classlist()">甜点</li>
-            <li @click="classlist()">午餐</li>
-            <li @click="classlist()">晚餐</li>
-          </ul>
-        </div>
-        <div>
-          <ul class="indexul2">
-            <li @click="classlist()">烘培</li>
-            <li @click="classlist()">家常菜</li>
-            <li @click="classlist()">中式点心</li>
-            <li @click="menu()">全部分类</li>
-          </ul>
-        </div>
-      </div>
+      <van-grid square>
+        <van-grid-item v-for="value in 8" :key="value" text="文字" />
+      </van-grid>
 
       <h3>专辑推荐</h3>
 
-      <div class="indexbottom">
-        <img src="../img/3.jpg" @click="gmyj()" />
-        <img src="../img/1.jpg" @click="gmyj()" />
-        <img src="../img/2.jpg" @click="gmyj()" />
-        <img src="../img/3.jpg" @click="gmyj()" />
-        <img src="../img/4.jpg" @click="gmyj()" />
-        <img src="../img/5.jpg" @click="gmyj()" />
-      </div>
-    </div>
-    <router-view></router-view>
-    <div class="footer">
+      <img v-for="img in imageList" v-lazy="img" class="imgindex" />
 
-      <van-tabbar v-model="active" active-color="#FF0" inactive-color="#000">
-        <van-tabbar-item icon="wap-home" to="/index">首页</van-tabbar-item>
-        <van-tabbar-item icon="shop-collect-o" to="/menutypetbl">菜谱分类</van-tabbar-item>
-        <van-tabbar-item icon="goods-collect-o" to="/shopbasket">菜篮子</van-tabbar-item>
-        <van-tabbar-item icon="more-o" to="/more">更多</van-tabbar-item>
-      </van-tabbar>
     </div>
+
   </div>
 </template>
-
 <script>
 export default {
   name:"index",
   data() {
     return {
       value: "",
-      active: 0
+      active: 0,
+      imageList: [
+        "https://img.yzcdn.cn/vant/apple-1.jpg",
+        "https://img.yzcdn.cn/vant/apple-2.jpg",
+        "https://img.yzcdn.cn/vant/apple-1.jpg",
+        "https://img.yzcdn.cn/vant/apple-2.jpg"
+      ]
     };
   },
   methods: {
@@ -82,11 +58,10 @@ export default {
   }
 }
 </script>
-
 <style scoped>
-.imgindex img {
-  width: 49%;
-  height: 100px;
+.imgindex{
+  width: 100%;
+  height: 200px;
 }
 .top {
   margin-top: 40px;

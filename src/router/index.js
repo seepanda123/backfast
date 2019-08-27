@@ -10,30 +10,37 @@ Router.prototype.push = function push(location) {
 Vue.use(Router);
 
 export default new Router({
-  routes: [{
-      path: "/index",
-      name: "index",
-      component: () => import("../views/Index"),
-      children: [{
+  routes: [
+    {
+      path: "/",
+      redirect: "/index"
+    },
+    {
+      path: "/all",
+      name: "all",
+      component: () => import("../views/All"),
+      children: [
+        {
+          path: "/index",
+          name: "index",
+          component: () => import("../views/Index"),
+        }, {
           path: "/home",
           name: "home",
           component: () => import("../views/Home")
-        },
-        {
+        }, {
           path: "/more",
           name: "more",
           component: () => import("../views/More")
-        },
-        {
+        }, {
           path: "/shopbasket",
           name: "shopbasket",
           component: () => import("../views/ShopBasket")
-        },
-        {
+        }, {
           path: "/menutypetbl",
           name: "menutypetbl",
           component: () => import("../views/MenuTypeTbl")
-        }
+        },
       ]
     },
     {
@@ -117,4 +124,4 @@ export default new Router({
       component: () => import('../views/Gmyj')
     }
   ]
-});
+})

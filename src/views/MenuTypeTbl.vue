@@ -58,8 +58,7 @@ export default {
   name: "menutypetbl",
   data() {
     return {
-      value: "",
-      active: 0
+      value: ""
     }
   },
   methods: {
