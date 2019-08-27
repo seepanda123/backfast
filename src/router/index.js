@@ -20,7 +20,7 @@ export default new Router({
       name: "all",
       component: () => import("../views/All"),
       children: [
-        
+
         {
           path: "/index",
           name: "index",
@@ -44,9 +44,6 @@ export default new Router({
         },
       ]
     },
-        
-      
-    
     {
       path: "/kitchenstory",
       name: "kitchenstory",
@@ -97,6 +94,11 @@ export default new Router({
       name: 'Fresh',
       component: () => import('../views/Fresh')
     },
-  
+    {
+      path:"/Search",
+      name:"search",
+      component:()=>import('../views/Search')
+    },
+
   ]
 });

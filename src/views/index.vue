@@ -19,7 +19,7 @@
 
 
     </div>
-    
+
   </div>
 </template>
 <script>
@@ -28,7 +28,6 @@ export default {
   data() {
     return {
       value: "",
-      active: 0,
       imageList: [
         "https://img.yzcdn.cn/vant/apple-1.jpg",
         "https://img.yzcdn.cn/vant/apple-2.jpg",
