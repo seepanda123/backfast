@@ -93,6 +93,5 @@ export default new Router({
       name: 'Fresh',
       component: () => import('../views/Fresh')
     },
-
   ]
 })
