@@ -1,7 +1,11 @@
 <template>
   <div class="box">
-    <van-nav-bar title="菜谱详情" left-arrow @click-left="onClickLeft" @click-right="onClickRight">
-      <van-icon name="star-o" slot="right" />
+    <van-nav-bar title="菜谱详情" left-arrow @click-left="onClickLeft">
+
+        <van-icon name="star-o" slot="right" v-if="icon" @click="shoucang"/>
+        <van-icon name="star" slot="right" color="orange" v-else />
+
+
     </van-nav-bar>
 
     <div class="item">
@@ -12,7 +16,17 @@
 
       <p class="detail">{{pdesc}}</p>
 
-      <van-nav-bar left-text="材料" right-text="加入菜篮子" @click-right="addshop" />
+      <div v-if="token">
+        <van-nav-bar left-text="材料" right-text="加入菜篮子" @click-right="addshop" v-if="show"/>
+        <van-nav-bar left-text="材料" right-text="移除菜篮子" @click-right="delshop" v-if="shows"/>
+      </div>
+      <div v-else>
+        <van-nav-bar left-text="材料" right-text="加入菜篮子" @click-right="tishi"/>
+
+      </div>
+
+
+
 
       <div @click="mat()">
         <van-cell
@@ -55,26 +69,57 @@ export default {
   name: "Details",
   data() {
     return {
+      token:'',
       pimg: "",
       ptitle: "",
       pdesc: "",
       cailiao1: [],
       cailiao2: [],
       pic:[],
-      mintit:[]
+      mintit:[],
+      uid:'',
+      show:true,
+      shows:false,
+      icon:true
     };
   },
   methods: {
+    tishi(){
+      this.$toast("请先登录")
+    },
     onClickLeft() {
       this.$router.go(-1);
     },
-    onClickRight() {
-      console.log(22);
-      // 调接口 添加到 收藏列表
-    },
+    // 调接口 添加到 菜篮子
     addshop() {
-      console.log(33);
-      // 调接口 添加到 菜篮子
+      let shop = []
+      if(localStorage.getItem('shop')){
+        shop = Array(localStorage.getItem('shop'))
+      }
+      shop.push(this.uid)
+      localStorage.setItem("shop",shop)
+      this.show=false;
+      this.shows=true
+    },
+    delshop(){
+      let shop = []
+      if(localStorage.getItem('shop')){
+        shop = localStorage.getItem('shop').split(",")
+        shop.pop()
+        localStorage.setItem("shop",shop)
+        this.shows=false;
+        this.show=true
+      }
+    },
+    shoucang(){
+      this.icon = false;
+      let shop = []
+      if(localStorage.getItem('cang')){
+        shop = Array(localStorage.getItem('shop'))
+      }
+      shop.push(this.uid)
+      localStorage.setItem("cang",shop)
+      this.$toast("收藏成功")
     },
     mat() {
       this.$router.push("MaterialList");
@@ -84,16 +129,16 @@ export default {
     }
   },
   mounted() {
-    let params = { uid: 9000000 };
+    this.token = localStorage.getItem("token")
+    this.uid = localStorage.getItem("uid")
+    let params = { uid: this.uid };
     api.product(params).then(data => {
       let title = data.data.pop();
       let list = data.data.reverse();
-      console.log(list);
       this.pimg = title.pimg;
       this.ptitle = title.pname;
       for (let val of list) {
         if (val.pname) {
-          console.log(val.pname.split(" ")[0]);
           this.cailiao1.push(val.pname.split(" ")[0]);
           this.cailiao2.push(val.pname.split(" ")[1]);
         }
@@ -103,7 +148,6 @@ export default {
         }
       }
     });
-    console.log(this.cailiao1, this.cailiao2);
   }
 };
 </script>
