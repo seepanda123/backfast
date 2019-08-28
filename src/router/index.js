@@ -70,7 +70,7 @@ export default new Router({
       component: () => import("../views/Login")
     },
     {
-      path: "/Details",
+      path: "/Details:id",
       name: "Details",
       component: () => import("../views/Details")
     },

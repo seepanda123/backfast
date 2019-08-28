@@ -266,7 +266,7 @@ export default {
   },
   methods: {
     tap(){
-      this.$router.push(" Search")
+      this.$router.push("Search")
     }
   }
 };
