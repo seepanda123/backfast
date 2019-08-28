@@ -20,6 +20,7 @@ export default new Router({
       name: "all",
       component: () => import("../views/All"),
       children: [
+
         {
           path: "/index",
           name: "index",
