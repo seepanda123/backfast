@@ -35,10 +35,9 @@
   </div>
 </template>
 <script>
-
-import app from '../api/api_pro'
+import axios from '../api/api_pro'
 let parmas = {uid:6000001}
-app.product(parmas).then((data)=>{
+axios.product(parmas).then((data)=>{
   console.log(data)
 })
 
@@ -59,7 +58,7 @@ export default {
         this.num4 = Math.floor(Math.random() * 41) + 9000000;
         this.num5 = Math.floor(Math.random() * 41) + 9000000;
         let params = { uid: this.num1 };
-        axios.getProduct(params).then(data => {
+        axios.product(params).then(data => {
           var str = data.data.pop();
           this.pname = str.pname;
           this.pimg = str.pimg;
@@ -67,28 +66,28 @@ export default {
           console.log(this.pimg);
         });
         let params1 = { uid: this.num2 };
-        axios.getProduct(params1).then(data => {
+        axios.product(params1).then(data => {
           var str1 = data.data.pop();
           this.pname1 = str1.pname;
           this.pimg1 = str1.pimg;
           this.pdesc1 = str1.pdesc;
         });
         let params2 = { uid: this.num3 };
-        axios.getProduct(params2).then(data => {
+        axios.product(params2).then(data => {
           var str2 = data.data.pop();
           this.pname2 = str2.pname;
           this.pimg2 = str2.pimg;
           this.pdesc2 = str2.pdesc;
         });
         let params3 = { uid: this.num4 };
-        axios.getProduct(params3).then(data => {
+        axios.product(params3).then(data => {
           var str3 = data.data.pop();
           this.pname3 = str3.pname;
           this.pimg3 = str3.pimg;
           this.pdesc3 = str3.pdesc;
         });
         let params4 = { uid: this.num5 };
-        axios.getProduct(params4).then(data => {
+        axios.product(params4).then(data => {
           var str4 = data.data.pop();
           this.pname4 = str4.pname;
           this.pimg4 = str4.pimg;
@@ -136,7 +135,7 @@ export default {
     this.num5 = Math.floor(Math.random() * 41) + 9000000;
 
     let params = { uid: this.num1 };
-    axios.getProduct(params).then(data => {
+    axios.product(params).then(data => {
       var str = data.data.pop();
       this.pname = str.pname;
       this.pimg = str.pimg;
@@ -144,28 +143,28 @@ export default {
       console.log(this.pimg);
     });
     let params1 = { uid: this.num2 };
-    axios.getProduct(params1).then(data => {
+    axios.product(params1).then(data => {
       var str1 = data.data.pop();
       this.pname1 = str1.pname;
       this.pimg1 = str1.pimg;
       this.pdesc1 = str1.pdesc;
     });
     let params2 = { uid: this.num3 };
-    axios.getProduct(params2).then(data => {
+    axios.product(params2).then(data => {
       var str2 = data.data.pop();
       this.pname2 = str2.pname;
       this.pimg2 = str2.pimg;
       this.pdesc2 = str2.pdesc;
     });
     let params3 = { uid: this.num4 };
-    axios.getProduct(params3).then(data => {
+    axios.product(params3).then(data => {
       var str3 = data.data.pop();
       this.pname3 = str3.pname;
       this.pimg3 = str3.pimg;
       this.pdesc3 = str3.pdesc;
     });
     let params4 = { uid: this.num5 };
-    axios.getProduct(params4).then(data => {
+    axios.product(params4).then(data => {
       var str4 = data.data.pop();
       this.pname4 = str4.pname;
       this.pimg4 = str4.pimg;
