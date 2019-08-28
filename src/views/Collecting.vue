@@ -49,7 +49,7 @@ export default {
   },
   mounted(){
     var params = {uid:num};
-    app.getProduct(params).then((data)=>{
+    app.product(params).then((data)=>{
       // console.log(data.data.pop())
       var str = data.data.pop();
       this.title = str.pname;
