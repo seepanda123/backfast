@@ -85,42 +85,42 @@ export default {
   },
   mounted(){
     var params = {uid:num};
-    app.getProduct(params).then((data)=>{
+    app.product(params).then((data)=>{
       //console.log(data.data.pop())
       var str = data.data.pop();
       this.title = str.pdesc;
       this.pimg = str.pimg;
     });
     var params1 = {uid:num1};
-    app.getProduct(params1).then((data)=>{
+    app.product(params1).then((data)=>{
       //console.log(data.data.pop())
       var str = data.data.pop();
       this.title1 = str.pdesc;
       this.pimg1 = str.pimg;
     });
     var params2 = {uid:num2};
-    app.getProduct(params2).then((data)=>{
+    app.product(params2).then((data)=>{
       //console.log(data.data.pop())
       var str = data.data.pop();
       this.title2 = str.pdesc;
       this.pimg2 = str.pimg;
     });
     var params3 = {uid:num3};
-    app.getProduct(params3).then((data)=>{
+    app.product(params3).then((data)=>{
       //console.log(data.data.pop())
       var str = data.data.pop();
       this.title3 = str.pdesc;
       this.pimg3 = str.pimg;
     });
     var params4 = {uid:num4};
-    app.getProduct(params4).then((data)=>{
+    app.product(params4).then((data)=>{
       //console.log(data.data.pop())
       var str = data.data.pop();
       this.title4 = str.pdesc;
       this.pimg4 = str.pimg;
     });
     var params5 = {uid:num5};
-    app.getProduct(params5).then((data)=>{
+    app.product(params5).then((data)=>{
       //console.log(data.data.pop())
       var str = data.data.pop();
       this.title5 = str.pdesc;

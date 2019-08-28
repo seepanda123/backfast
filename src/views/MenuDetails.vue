@@ -35,6 +35,7 @@
 
 <script>
 import app from '../api/api_pro'
+import axios from 'axios'
 let parmas = {uid:6000001}
 app.product(parmas).then((data)=>{
   console.log(data)

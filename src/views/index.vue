@@ -16,14 +16,12 @@
       <h3>专辑推荐</h3>
 
       <img v-for="img in imageList" v-lazy="img" class="imgindex" />
-
     </div>
-
   </div>
 </template>
 <script>
 export default {
-  name:"index",
+  name: "index",
   data() {
     return {
       value: "",
@@ -56,10 +54,10 @@ export default {
       this.$router.push("Search");
     }
   }
-}
+};
 </script>
 <style scoped>
-.imgindex{
+.imgindex {
   width: 100%;
   height: 200px;
 }
@@ -104,7 +102,7 @@ export default {
 .indexul2 li:last-child {
   border-right: none;
 }
-.indexbottom img{
+.indexbottom img {
   width: 100%;
   height: 200px;
 }
