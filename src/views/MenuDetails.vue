@@ -44,6 +44,13 @@ axios.product(parmas).then((data)=>{
 
 export default {
   name: "menudetails",
+  data(){
+   return {
+     pname:'',
+     pimg:"",
+     pdesc:""
+   }
+  },
   methods: {
     onClickLeft() {
       this.$router.go(-1);
@@ -199,4 +206,9 @@ p {
   -webkit-line-clamp: 3;
   overflow: hidden;
 }
+h4,p{
+  width:92vw;
+  margin-left:4vw;
+}
+
 </style>
