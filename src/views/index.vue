@@ -3,36 +3,51 @@
     <van-nav-bar title="早餐菜谱" />
 
     <div class="top">
-      <van-grid :column-num="2">
-        <van-grid-item v-for="value in 2" :key="value" icon="photo-o" />
-      </van-grid>
+      <div class="imgindex">
+        <img src="../img/4.jpg" @click="week()" />
+        <img src="../img/5.jpg" @click="fresh()" />
+      </div>
 
-      <van-search placeholder="搜索 菜谱/食材" v-model="value" input-align="center" />
+      <van-search placeholder="搜索 菜谱/食材" v-model="value" input-align="center" @click="search()"/>
 
-      <van-grid square>
-        <van-grid-item v-for="value in 8" :key="value" text="文字" />
-      </van-grid>
+      <div class="indexul">
+        <div>
+          <ul class="indexul1">
+            <li @click="classlist()">早餐</li>
+            <li @click="classlist()">甜点</li>
+            <li @click="classlist()">午餐</li>
+            <li @click="classlist()">晚餐</li>
+          </ul>
+        </div>
+        <div>
+          <ul class="indexul2">
+            <li @click="classlist()">烘培</li>
+            <li @click="classlist()">家常菜</li>
+            <li @click="classlist()">中式点心</li>
+            <li @click="menu()">全部分类</li>
+          </ul>
+        </div>
+      </div>
 
       <h3>专辑推荐</h3>
 
-      <img v-for="img in imageList" v-lazy="img" class="imgindex" />
-
+      <div class="indexbottom">
+        <img src="../img/3.jpg" @click="gmyj()" />
+        <img src="../img/1.jpg" @click="gmyj()" />
+        <img src="../img/2.jpg" @click="gmyj()" />
+        <img src="../img/3.jpg" @click="gmyj()" />
+        <img src="../img/4.jpg" @click="gmyj()" />
+        <img src="../img/5.jpg" @click="gmyj()" />
+      </div>
     </div>
-
   </div>
 </template>
 <script>
 export default {
-  name:"index",
   data() {
     return {
       value: "",
-      imageList: [
-        "https://img.yzcdn.cn/vant/apple-1.jpg",
-        "https://img.yzcdn.cn/vant/apple-2.jpg",
-        "https://img.yzcdn.cn/vant/apple-1.jpg",
-        "https://img.yzcdn.cn/vant/apple-2.jpg"
-      ]
+      active: 0
     };
   },
   methods: {
@@ -55,12 +70,27 @@ export default {
       this.$router.push("Search");
     }
   }
-}
+};
 </script>
 <style scoped>
-.imgindex{
+.box{
+  display: flex;
+  flex-direction: column;
+  height:100vh
+}
+.imgindex {
   width: 100%;
-  height: 200px;
+  height: 100px;
+}
+.top{
+  padding-right: 20px;
+  padding-left: 20px;
+  overflow: auto;
+}
+
+.imgindex img {
+  width: 49%;
+  height: 100px;
 }
 .top {
   margin-top: 40px;
@@ -107,4 +137,5 @@ export default {
   width: 100%;
   height: 200px;
 }
+
 </style>
