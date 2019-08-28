@@ -1,20 +1,18 @@
 <template>
 
+
   <div class="box">
     <van-nav-bar title="更多"  class="header" />
     <section>
       <div v-if="token">
-        <van-image round width="3rem" height="3rem" src="https://img.yzcdn.cn/vant/cat.jpeg" />
-        <p>厨友1566214099</p>
-        <p>你收藏的菜谱已经同步到云端永不丢失</p>
-      </div>
-      <div v-else>
-        <div class="logined" style="display:none">
+        <div class="logined">
           <van-image round width="3rem" height="3rem" src="https://img.yzcdn.cn/vant/cat.jpeg" />
           <p>厨友1566214099</p>
           <p>你收藏的菜谱已经同步到云<br>端,永不丢失</p>
         </div>
-        <div class="unlogin" style="display:block">
+      </div>
+      <div v-else>
+        <div class="unlogin" @click="tap()">
           <van-image round width="3rem" height="3rem" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1666256797,972082711&fm=26&gp=0.jpg" />
           <h4>登录/注册账号</h4>
           <p>解锁收藏，云端同步功能、收<br>藏内容不丢失</p>
@@ -88,6 +86,9 @@ export default {
   methods: {
     readhistory(){
       this.$router.push('/ReadHistory.vue')
+    },
+    tap(){
+       this.$router.push('/register')
     }
   },
   mounted() {
@@ -97,9 +98,7 @@ export default {
 </script>
 
 <style scoped>
-.box{
-  height:100vh
-}
+
 section{
   margin-top:10px;
   text-align: center
@@ -112,5 +111,4 @@ section li {
 
   height: 7vh;
 }
-
 </style>
