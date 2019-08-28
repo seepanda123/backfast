@@ -47,12 +47,6 @@ export default {
   data() {
     return {
       value: "",
-      imageList: [
-        "https://img.yzcdn.cn/vant/apple-1.jpg",
-        "https://img.yzcdn.cn/vant/apple-2.jpg",
-        "https://img.yzcdn.cn/vant/apple-1.jpg",
-        "https://img.yzcdn.cn/vant/apple-2.jpg"
-      ],
       active: 0
     };
   },
@@ -86,7 +80,7 @@ export default {
 }
 .imgindex {
   width: 100%;
-  height: 200px;
+  height: 100px;
 }
 .top{
   padding-right: 20px;
