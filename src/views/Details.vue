@@ -115,7 +115,7 @@ export default {
       this.icon = false;
       let shop = []
       if(localStorage.getItem('cang')){
-        shop = Array(localStorage.getItem('shop'))
+        shop = Array(localStorage.getItem('cang'))
       }
       shop.push(this.uid)
       localStorage.setItem("cang",shop)
