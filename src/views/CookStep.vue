@@ -3,12 +3,7 @@
     <div class="left">
       <div class="x" @click="goback()">X</div>
       <div class="cai">
-        <div class="color"  @click="ind(0)">1</div>
-        <div @click="ind(1)">2</div>
-        <div @click="ind(2)">3</div>
-        <div @click="ind(3)">4</div>
-        <div @click="ind(4)">5</div>
-        <div @click="ind(5)">6</div>
+        <div @click="ind(i)" v-for="(list,i) in pic">{{i}}</div>
       </div>
       <div class="ic" @click="gomat()">
         <van-icon name="bag-o" />
@@ -16,64 +11,19 @@
       </div>
     </div>
     <div class="right1">
-      <div class="top sty"><van-icon name="arrow-up" /></div>
+      <!-- <div class="top sty"><van-icon name="arrow-up" /></div> -->
       <ul @scroll="onscroll" id="ul" ref='box'>
-        <li>
+        <li v-for="(list,i) in pic">
            <van-image
             width="100%"
             height="150px"
             fit="cover"
-            src="https://img.yzcdn.cn/vant/cat.jpeg"
+            :src="list"
           />
-          <p class="mintit1">1就俩二胡阿喝过框架的功课是哦帅得很吧价格为霍芳芳;</p>
-        </li>
-        <li>
-           <van-image
-            width="100%"
-            height="150px"
-            fit="cover"
-            src="https://img.yzcdn.cn/vant/cat.jpeg"
-          />
-          <p class="mintit1">2就俩二胡阿喝过框架的功课是哦帅得很吧价格为霍芳芳;</p>
-        </li>
-        <li>
-           <van-image
-            width="100%"
-            height="150px"
-            fit="cover"
-            src="https://img.yzcdn.cn/vant/cat.jpeg"
-          />
-          <p class="mintit1">3就俩二胡阿喝过框架的功课是哦帅得很吧价格为霍芳芳;</p>
-        </li>
-        <li>
-           <van-image
-            width="100%"
-            height="150px"
-            fit="cover"
-            src="https://img.yzcdn.cn/vant/cat.jpeg"
-          />
-          <p class="mintit1">4就俩二胡阿喝过框架的功课是哦帅得很吧价格为霍芳芳;</p>
-        </li>
-        <li>
-           <van-image
-            width="100%"
-            height="150px"
-            fit="cover"
-            src="https://img.yzcdn.cn/vant/cat.jpeg"
-          />
-          <p class="mintit1">5就俩二胡阿喝过框架的功课是哦帅得很吧价格为霍芳芳;</p>
-        </li>
-        <li>
-           <van-image
-            width="100%"
-            height="150px"
-            fit="cover"
-            src="https://img.yzcdn.cn/vant/cat.jpeg"
-          />
-          <p class="mintit1">6就俩二胡阿喝过框架的功课是哦帅得很吧价格为霍芳芳;</p>
+          <p class="mintit1">{{mintit[i]}}</p>
         </li>
       </ul>
-      <div class="bottom sty"><van-icon name="arrow-down" /></div>
+      <!-- <div class="bottom sty"><van-icon name="arrow-down" /></div> -->
     </div>
   </div>
 </template>
@@ -81,12 +31,14 @@
 
 <script>
 import $ from 'jquery';
+import api from "../api/api_pro"
 
 export default {
   name:'MaterialList',
   data() {
     return {
-      
+      pic:[],
+      mintit:[]
     }
   },
   methods: {
@@ -105,6 +57,26 @@ export default {
       $("#ul").scrollTop(540*i)
     }
   },
+  mounted () {
+    let uid = localStorage.getItem("uid")
+    api.product({uid:uid}).then(data => {
+      let title = data.data.pop();
+      let list = data.data.reverse();
+      for (let val of list) {
+        if(val.pimg){
+          this.pic.push(val.pimg)
+          this.mintit.push(val.pdesc)
+        }
+      }
+    });
+    console.log(this.pic)
+    
+    // $(".cai").children[0].addClass("color")
+  },
+  updated () {
+    console.log($(".cai").children()[0])
+    $(".cai").children().eq(0).attr("class","color")
+  }
   
 }
 

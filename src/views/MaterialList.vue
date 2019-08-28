@@ -10,8 +10,7 @@
     </div>
     <div class="right">
       <ul>
-        <li>鸡蛋<span>10-15个</span></li>
-        <li>红茶<span>1包</span></li>
+        <li v-for="(list,i) in cailiao1">{{list}}<span>{{cailiao2[i]}}</span></li>
       </ul>
     </div>
   </div>
@@ -19,11 +18,33 @@
 
 
 <script>
+import api from "../api/api_pro"
 export default {
   name:'MaterialList',
+  data(){
+    return{
+      cailiao1:[],
+      cailiao2:[]
+    }
+  },
   methods: {
     goback(){
       this.$router.go(-1)
+    }
+  },
+  mounted() {
+    if(localStorage.getItem("uid")){
+      let uid = localStorage.getItem("uid")
+      api.product({uid:uid}).then(data => {
+      let title = data.data.pop();
+      let list = data.data.reverse();
+      for (let val of list) {
+        if (val.pname) {
+          this.cailiao1.push(val.pname.split(" ")[0]);
+          this.cailiao2.push(val.pname.split(" ")[1]);
+        }
+      }
+    });
     }
   },
 }
