@@ -3,7 +3,7 @@
     <router-view></router-view>
     <div class="footer">
 
-      <van-tabbar v-model="active" active-color="#FF0" inactive-color="#000">
+      <van-tabbar v-model="active" active-color="orange" inactive-color="#000">
         <van-tabbar-item icon="wap-home" to="/index">首页</van-tabbar-item>
         <van-tabbar-item icon="shop-collect-o" to="/menutypetbl">菜谱分类</van-tabbar-item>
         <van-tabbar-item icon="goods-collect-o" to="/shopbasket">菜篮子</van-tabbar-item>
