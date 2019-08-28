@@ -20,6 +20,7 @@ export default new Router({
       name: "all",
       component: () => import("../views/All"),
       children: [
+
         {
           path: "/index",
           name: "index",
@@ -42,7 +43,7 @@ export default new Router({
           component: () => import("../views/MenuTypeTbl")
         },
       ]
-    }, 
+    },
     {
       path: "/kitchenstory",
       name: "kitchenstory",
@@ -84,9 +85,14 @@ export default new Router({
       component: () => import("../views/CookStep")
     },
     {
-      path:"/menudetails",
-      name:"menudetails",
-      component:()=>import("../views/MenuDetails")
+      path: "/menudetails",
+      name: "menudetails",
+      component: () => import("../views/MenuDetails")
+    },
+    {
+      path: '/Fresh',
+      name: 'Fresh',
+      component: () => import('../views/Fresh')
     },
     {
       path: '/Fresh',

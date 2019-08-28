@@ -1,7 +1,17 @@
 <template>
-  <div class="box">
-    <van-nav-bar title="早餐菜谱" />
+  <div>
 
+<<<<<<< HEAD:src/views/index.vue
+    <router-view></router-view>
+    <div class="footer">
+
+      <van-tabbar v-model="active" active-color="#FF0" inactive-color="#000">
+        <van-tabbar-item icon="wap-home" to="/index">首页</van-tabbar-item>
+        <van-tabbar-item icon="shop-collect-o" to="/menutypetbl">菜谱分类</van-tabbar-item>
+        <van-tabbar-item icon="goods-collect-o" to="/shopbasket">菜篮子</van-tabbar-item>
+        <van-tabbar-item icon="more-o" to="/more">更多</van-tabbar-item>
+      </van-tabbar>
+=======
     <div class="top">
       <div class="imgindex">
         <img src="../img/4.jpg" @click="week()" />
@@ -39,10 +49,22 @@
         <img src="../img/4.jpg" @click="gmyj()" />
         <img src="../img/5.jpg" @click="gmyj()" />
       </div>
+>>>>>>> 83c8b868c57d0fd639e7e8c7e9ec2b04a63586a1:src/ views/Index.vue
     </div>
   </div>
 </template>
+
 <script>
+<<<<<<< HEAD:src/views/index.vue
+  export default {
+    name:"index",
+    data(){
+      return {
+        active:0
+      }
+    }
+  }
+=======
 export default {
   data() {
     return {
@@ -71,8 +93,15 @@ export default {
     }
   }
 };
+>>>>>>> 83c8b868c57d0fd639e7e8c7e9ec2b04a63586a1:src/ views/Index.vue
 </script>
+
 <style scoped>
+<<<<<<< HEAD:src/views/index.vue
+=======
+<<<<<<< HEAD:src/views/index.vue
+=======
+>>>>>>> master:src/ views/Index.vue
 .box{
   display: flex;
   flex-direction: column;
@@ -137,5 +166,9 @@ export default {
   width: 100%;
   height: 200px;
 }
+<<<<<<< HEAD:src/views/index.vue
+=======
+>>>>>>> 83c8b868c57d0fd639e7e8c7e9ec2b04a63586a1:src/ views/Index.vue
+>>>>>>> master:src/ views/Index.vue
 
 </style>
