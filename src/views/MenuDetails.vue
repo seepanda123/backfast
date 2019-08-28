@@ -104,8 +104,14 @@ export default {
     },
     toDetail(uid) {
       localStorage.setItem("uid",uid)
-      this.$router.push("Details");
+      this.$router.push({name:'Details',params:{uid}});
       // console.log(uid)
+      let history = []
+      if(localStorage.getItem("history")){
+        history =localStorage.getItem("history").split(",");
+      }
+      history.push(uid)
+      localStorage.setItem("history",history)
     }
   },
 
@@ -131,7 +137,7 @@ export default {
       mun2: "",
       mun3: "",
       mun4: "",
-      mun5: ""
+      mun5: "",
     };
   },
   mounted() {
