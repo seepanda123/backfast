@@ -131,7 +131,8 @@ export default {
   mounted() {
     this.token = localStorage.getItem("token")
     this.uid = localStorage.getItem("uid")
-    let params = { uid: this.uid };
+    let params = {uid: this.$route.params.uid}
+    // let params = {uid:this.uid };
     api.product(params).then(data => {
       let title = data.data.pop();
       let list = data.data.reverse();

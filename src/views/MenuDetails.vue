@@ -122,11 +122,42 @@ export default {
     },
     toDetail(uid) {
       localStorage.setItem("uid",uid)
-      this.$router.push("Details");
+      this.$router.push({name:'Details',params:{uid}});
       // console.log(uid)
+      let history = []
+      if(localStorage.getItem("history")){
+        history =localStorage.getItem("history").split(",");
+      }
+      history.push(uid)
+      localStorage.setItem("history",history)
     }
   },
 
+  data() {
+    return {
+      isLoading: false,
+      pname: "",
+      pimg: "",
+      pdesc: "",
+      pname1: "",
+      pimg1: "",
+      pdesc1: "",
+      pname2: "",
+      pimg2: "",
+      pdesc2: "",
+      pname3: "",
+      pimg3: "",
+      pdesc3: "",
+      pname4: "",
+      pimg4: "",
+      pdesc4: "",
+      mun1: "",
+      mun2: "",
+      mun3: "",
+      mun4: "",
+      mun5: "",
+    };
+  },
   mounted() {
     this.num1 = Math.floor(Math.random() * 41) + 9000000;
     this.num2 = Math.floor(Math.random() * 41) + 9000000;

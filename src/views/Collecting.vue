@@ -1,24 +1,16 @@
 <template>
   <div>
-    <van-nav-bar title="我的收藏" left-arrow @click-left="onClickLeft" :fixed="true">
-      <van-icon name="delete" slot="right" />
+    <van-nav-bar title="我的收藏" left-arrow @click-left="onClickLeft" :fixed="true"  @click-right="onClickRight">
+      <van-icon name="delete" slot="right"/>
     </van-nav-bar>
     <div class="box">
       <van-grid :border="false" :column-num="2" >
-        <van-grid-item to="/src/views/Details">
-          <van-image :src="pimg" />
-          <p>{{title}}</p>
+        <van-grid-item @click="toDetail(item.uid)" :to="{name:'Details',params:{uid:item.uid}}" v-for="(item,i) in arr" v-bind:key="i">
+          <van-image :src="item.pimg" />
+          <em v-if="show"><van-icon name="cross" size="30" @click="del(i)" @click.stop/></em>
+          <p>{{item.pname}}</p>
         </van-grid-item>
-        <van-grid-item>
-          <van-image :src="pimg1" />
-          <p>{{title1}}</p>
-        </van-grid-item>
-      </van-grid>
-       <van-grid :border="false" :column-num="2" >
-        <van-grid-item  text="文字">
-          <van-image src="https://img.yzcdn.cn/vant/apple-1.jpg" />
-          <p>测试</p>
-        </van-grid-item>
+
 
       </van-grid>
       <p>快去收藏更多~</p>
@@ -36,25 +28,41 @@ export default {
   name: "collecting",
   data(){
     return{
-      title:'',
-      pimg:'',
-      title1:'',
-      pimg1:''
+     arr:[],
+     show:false,
     }
   },
   methods: {
     onClickLeft() {
       this.$router.go(-1);
+    },
+    onClickRight(){
+      this.show = !this.show;
+    },
+    toDetail(uid){
+      // this.$router.push(/details')
+      localStorage.setItem("uid",uid)
+    },
+    del(i){
+      this.arr.splice(i,1)
     }
   },
   mounted(){
-    var params = {uid:num};
-    app.product(params).then((data)=>{
+    if(localStorage.getItem("cang")){
+      var num = localStorage.getItem("cang").split(",");
+      console.log(num)
+    }
+    num.map((data)=>{
+      console.log(data)
+      var params = {uid:data};
+       app.product(params).then((data)=>{
       // console.log(data.data.pop())
       var str = data.data.pop();
-      this.title = str.pname;
-      this.pimg = str.pimg;
+      this.arr.push(str)
     });
+    })
+
+
 
   }
 }
@@ -74,6 +82,17 @@ export default {
   width: 41vw;
   height: 41vw;
   /* border:blue solid 1px; */
+  position: relative;
+}
+ em{
+  width:30px;
+  height:30px;
+  background:#fff;
+  opacity: 0.5;
+  position: absolute;
+  top:15px;
+  right:10px;
+  text-align: center
 }
 p{
   margin:4px
