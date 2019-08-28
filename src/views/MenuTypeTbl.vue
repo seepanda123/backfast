@@ -1,7 +1,7 @@
 <template>
   <div class="Body">
     <div class="header">
-      <van-search input-align="center" placeholder="搜索菜谱" v-model="value" />
+      <van-search input-align="center" placeholder="搜索菜谱" v-model="value" @click="tap()"/>
     </div>
     <div class="section">
       <p>热门分类</p>
@@ -71,7 +71,7 @@
 
       <p>主食小吃</p>
 
-      <van-grid :border="false">
+       <van-grid :border="false">
         <van-grid-item to="/menudetails" :gutter="8">
           <van-image src="https://res1.hoto.cn/030273e959633f0df444eb88.jpg!default" />
         </van-grid-item>
@@ -90,7 +90,7 @@
       </van-grid>
 
       <p>时令美食</p>
-      <van-grid :border="false">
+       <van-grid :border="false">
         <van-grid-item to="/menudetails" :gutter="8">
           <van-image src="https://res1.hoto.cn/02fd16cc59633f0df444eb88.jpg!default" />
         </van-grid-item>
@@ -148,6 +148,7 @@
         <van-grid-item to="/menudetails">
           <van-image src="https://res1.hoto.cn/030d946c59633f0df444eb88.jpg!default" />
         </van-grid-item>
+
       </van-grid>
       <p>烘焙甜品</p>
       <van-grid :border="false">
@@ -169,6 +170,7 @@
         <van-grid-item to="/menudetails">
           <van-image src="https://res1.hoto.cn/0306a91059633f0df444eb88.jpg!default" />
         </van-grid-item>
+
       </van-grid>
       <p>美容养生</p>
       <van-grid :border="false">
@@ -199,6 +201,7 @@
         <van-grid-item to="/menudetails">
           <van-image src="https://res1.hoto.cn/02f5721159633f0df444eb88.jpg!default" />
         </van-grid-item>
+
       </van-grid>
       <p>场景</p>
       <van-grid :border="false">
@@ -261,7 +264,11 @@ export default {
       active: 0,
     };
   },
-  methods: {}
+  methods: {
+    tap(){
+      this.$router.push(" Search")
+    }
+  }
 };
 </script>
 
