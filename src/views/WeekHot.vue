@@ -3,7 +3,7 @@
     <van-nav-bar title="周最热" left-arrow @click-left="onClickLeft" />
     <div class="WeekHot">
       <div class="WeekHotimg">
-        <img src="../img/1.jpg" alt />
+        <img src="" alt />
       </div>
       <div class="WeekHot1">
         <h3>秋葵虾仁菌菇汤</h3>

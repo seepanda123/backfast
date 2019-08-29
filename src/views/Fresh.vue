@@ -3,7 +3,7 @@
     <van-nav-bar title="新鲜菜" left-arrow @click-left="onClickLeft" />
     <div class="Fresh">
       <div class="Freshimg">
-        <img src="../img/1.jpg" alt />
+        <img src="" alt />
       </div>
       <div class="Fresh1">
         <h3>秋葵虾仁菌菇汤</h3>

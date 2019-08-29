@@ -22,6 +22,7 @@
 </template>
 
 <script>
+import $ from 'jquery';
 import app from "../api/api_pro";
 let num = Math.floor(Math.random()*41)+9000000;
 export default {
@@ -30,6 +31,7 @@ export default {
     return{
      arr:[],
      show:false,
+     num:[]
     }
   },
   methods: {
@@ -45,18 +47,19 @@ export default {
     },
     del(i){
       this.arr.splice(i,1)
+      this.num.splice(i,1)
+      localStorage.setItem("cang",this.num)
     }
   },
   mounted(){
     if(localStorage.getItem("cang")){
-      var num = localStorage.getItem("cang").split(",");
+      this.num = localStorage.getItem("cang").split(",");
       console.log(num)
     }
-    num.map((data)=>{
+    this.num.map((data)=>{
       console.log(data)
       var params = {uid:data};
-       app.product(params).then((data)=>{
-      // console.log(data.data.pop())
+      app.product(params).then((data)=>{
       var str = data.data.pop();
       this.arr.push(str)
     });
