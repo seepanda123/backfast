@@ -23,6 +23,7 @@
 
 <script>
 import app from "../api/api_pro";
+import $ from "jquery";
 let num = Math.floor(Math.random()*41)+9000000;
 export default {
   name: "collecting",
@@ -30,6 +31,7 @@ export default {
     return{
      arr:[],
      show:false,
+     num:[],
     }
   },
   methods: {
@@ -40,26 +42,37 @@ export default {
       this.show = !this.show;
     },
     toDetail(uid){
-      // this.$router.push(/details')
+
       localStorage.setItem("uid",uid)
     },
     del(i){
       this.arr.splice(i,1)
+      this.num.splice(i,1)
+      localStorage.setItem("cang",this.num)
     }
   },
   mounted(){
     if(localStorage.getItem("cang")){
-      var num = localStorage.getItem("cang").split(",");
+       this.num = localStorage.getItem("cang").split(",");
       console.log(num)
     }
-    num.map((data)=>{
+    var _this =this
+    this.num.map((data)=>{
       console.log(data)
       var params = {uid:data};
-       app.product(params).then((data)=>{
-      // console.log(data.data.pop())
-      var str = data.data.pop();
-      this.arr.push(str)
-    });
+
+    $.ajax({
+      type:"get",
+      url:"http://jx.xuzhixiang.top/ap/api/productlist.php",
+      async: false,
+      data: { uid: data },
+      dataType: "json",
+      success:function(data){
+
+         var str = data.data.pop();
+         _this.arr.push(str)
+      }
+    })
     })
 
 
