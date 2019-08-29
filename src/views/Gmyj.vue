@@ -3,7 +3,7 @@
     <van-nav-bar title="专辑详情" left-arrow @click-left="onClickLeft" />
     <div class="Gmyj">
       <div class="Gmyjimg">
-        <img src="../img/1.jpg" alt />
+        <img src="" alt />
       </div>
       <div class="Gmyj1">
         <h3>秋葵虾仁菌菇汤</h3>

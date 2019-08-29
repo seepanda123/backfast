@@ -22,8 +22,8 @@
 </template>
 
 <script>
+import $ from 'jquery';
 import app from "../api/api_pro";
-import $ from "jquery";
 let num = Math.floor(Math.random()*41)+9000000;
 export default {
   name: "collecting",
@@ -53,8 +53,7 @@ export default {
   },
   mounted(){
     if(localStorage.getItem("cang")){
-       this.num = localStorage.getItem("cang").split(",");
-      console.log(num)
+      this.num = localStorage.getItem("cang").split(",");
     }
     var _this =this
     this.num.map((data)=>{

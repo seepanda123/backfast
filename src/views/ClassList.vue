@@ -3,7 +3,7 @@
     <van-nav-bar title="早餐" left-arrow @click-left="onClickLeft" />
     <div class="clist">
       <div class="clistimg">
-        <img src="../img/1.jpg"/>
+        <img src=""/>
       </div>
       <div class="clist1">
         <h3>秋葵虾仁菌菇汤</h3>
