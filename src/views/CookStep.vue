@@ -3,7 +3,7 @@
     <div class="left">
       <div class="x" @click="goback()">X</div>
       <div class="cai">
-        <div @click="ind(i)" v-for="(list,i) in pic">{{i}}</div>
+        <div @click="ind(i)" v-for="(list,i) in pic" :key="i">{{i}}</div>
       </div>
       <div class="ic" @click="gomat()">
         <van-icon name="bag-o" />
@@ -13,7 +13,7 @@
     <div class="right1">
       <!-- <div class="top sty"><van-icon name="arrow-up" /></div> -->
       <ul @scroll="onscroll" id="ul" ref='box'>
-        <li v-for="(list,i) in pic">
+        <li v-for="(list,i) in pic" :key="i">
            <van-image
             width="100%"
             height="150px"
